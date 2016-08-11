@@ -11,6 +11,11 @@ run:
 	-v $(HTML):/usr/share/nginx/html \
 	$(IMG)
 
+runAlways:
+	docker run --restart=always --name $(INST) -d -p 80:80 \
+	-v $(HTML):/usr/share/nginx/html \
+	$(IMG)
+
 update:
 	docker cp nginx.conf $(INST):/etc/nginx/nginx.conf
 	docker exec $(INST) nginx -s reload
