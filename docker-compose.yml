@@ -1,0 +1,15 @@
+version: '2'
+services:
+  nginx-root:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - /home/carltonj2000/cj/cjSourceControlled/carltonj2000/home-server/build:/usr/share/nginx/html
+    depends_on:
+      - power
+  power:
+    build: ../ubuntu-power
+    volumes:
+      - /home/carltonj2000/cj/configsNscripts/go:/home/carltonj2000/cj/configsNscripts/go
+      - /home/carltonj2000/cj/cjSourceControlled/carltonj2000/home-server/build/power:/root/html
