@@ -13,3 +13,4 @@ services:
     volumes:
       - /home/carltonj2000/cj/configsNscripts/go:/home/carltonj2000/cj/configsNscripts/go
       - /home/carltonj2000/cj/cjSourceControlled/carltonj2000/home-server/build/power:/root/html
+restart: always
